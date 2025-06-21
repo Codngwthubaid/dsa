@@ -129,12 +129,97 @@ void pattern8(int num)
     }
 }
 
+void pattern10(int num)
+{
+    for (int i = 1; i <= 2 * num - 1; i++)
+    {
+        int stars = i;
+        if (i > 5)
+            stars = 2 * num - i;
+        for (int j = 1; j <= stars; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+}
+
+void pattern11(int num)
+{
+    int start = 1;
+    for (int i = 0; i <= num; i++)
+    {
+        if (i % 2 == 0)
+        {
+            start = 1;
+        }
+        else
+        {
+            start = 0;
+        }
+        for (int j = 0; j <= i; j++)
+        {
+            cout << start;
+            start = 1 - start;
+        }
+        cout << endl;
+    }
+}
+
+void pattern12(int num)
+{
+    for (int i = 1; i <= num; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << j;
+        }
+        for (int j = 1; j <= 2 * num - 2 * i; j++)
+        {
+            cout << " ";
+        }
+        for (int j = 1; j <= i; j++)
+        {
+            cout << j;
+        }
+
+        cout << endl;
+    }
+}
+
+void pattern13(int num)
+{
+    int start = 1;
+    for (int i = 1; i <= num; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << start << " ";
+            start += 1;
+        }
+        cout << endl;
+    }
+}
+
+void pattern14(int num)
+{
+    for (int i = 0; i < num; i++)
+    {
+        for (char ch = 'A'; ch <= 'A' + i; ch++)
+        {
+            cout << ch;
+        }
+        cout << endl;
+    }
+}
+
+// combine pattern7 nad pattern8 function together for getting pattern 9
 int main()
 {
     int num;
     cin >> num;
     cout << "No of lines : " << num << endl;
-    pattern8(num);
+    pattern14(num);
 
     return 0;
 }
