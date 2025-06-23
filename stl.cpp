@@ -186,6 +186,27 @@ void mapExplain()
     // }
 }
 
+bool comp(pair<int, int> p1, pair<int, int> p2)
+{
+    if (p1.second < p2.second)
+    {
+        return true;
+    }
+    if (p1.second > p2.second)
+    {
+        return false;
+    }
+
+    if (p1.first > p2.first)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 int main()
 {
     cout << "STL Basis -" << endl;
@@ -197,9 +218,36 @@ int main()
     // setExplain();
     // multi_setExplain();
     // mapExplain();
+
+    // pair<int, int> arr[] = {{1, 2}, {2, 3}, {4, 1}};
+    // int n = sizeof(arr) / sizeof(arr[0]);
+    // cout << n << endl;
+
+    // sort(arr, arr + n, comp);
+
+    // for (int i = 0; i < n; ++i)
+    // {
+    //     cout << "{" << arr[i].first << ", " << arr[i].second << "} ";
+    // }
+
+    int num = 7;
+    int cnt = __builtin_popcount(num);
+    // cout << cnt << endl;
+
+
+    string number = "005331";
+    cout << "Before : " << number << endl;
+    sort(number.begin(), number.end());
+    cout << "After : " << number << endl;
+
+    do
+    {
+        cout << number << endl;
+    } while (next_permutation(number.begin(), number.end()));
+
     return 0;
 }
 
 // STL : algorithms, functions, containers, iterators
-// containers : vectors, map, multimap, ordermap, queue, deque, stack, list, set, unorderset, multiset 
-// iterators 
+// containers : vectors, map, multimap, ordermap, queue, deque, stack, list, set, unorderset, multiset
+// iterators
