@@ -93,7 +93,7 @@ int c = 0;
 
 //     transform(s.begin(), s.end(), s.begin(), ::tolower);
 //     return s;
-// 
+//
 // }
 
 // bool checkPalindrom(int i, string &s)
@@ -112,11 +112,20 @@ int c = 0;
 //     return checkPalindrom(i + 1, s);
 // }
 
+// int checkFibo(int n)
+// {
+//     if (n <= 1)
+//         return n;
+//     int last = checkFibo(n - 1);
+//     int secondLast = checkFibo(n - 2);
+//     return last + secondLast;
+// }
+
 int main()
 {
     int n, i = 0, sum = 0;
     cout << "function starting" << endl;
-    // cin >> n;
+    cin >> n;
     // print();
     // printName(i, n);
     // print1toN(i, n);
@@ -131,10 +140,11 @@ int main()
     // for (int i = 0; i < arr[n]; i++)
     //     cin >> n;
     // reverseArrBy2PointerApproach(index, arr, n);
-    string name = "A man, a plan, a canal: Panama";
-    string clearedName = checkStr(name);
-    cout << clearedName << endl;
-    cout << checkPalindrom(i, clearedName) << endl;
-
+    // string name = "A man, a plan, a canal: Panama";
+    // string clearedName = checkStr(name);
+    // cout << clearedName << endl;
+    // cout << checkPalindrom(i, clearedName) << endl;s
+    int result = checkFibo(n);
+    cout << result << endl;
     return 0;
 }
