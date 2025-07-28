@@ -38,8 +38,7 @@ void bubble_sort(int arr[], int n)
     }
 }
 
-void inserttion_sort(int arr[], int n)
-{
+void inserttion_sort(int arr[], int n){
     for (int i = 0; i < n; i++)
     {
         int j = i;
@@ -54,7 +53,6 @@ void inserttion_sort(int arr[], int n)
     }
 }
 
-// merge_sort
 void merging(int arr[], int low, int mid, int high)
 {
     vector<int> temp;
