@@ -135,34 +135,32 @@ void recursive_insertion_sorting(int arr[], int i, int n)
     recursive_insertion_sorting(arr, i + 1, n);
 }
 
-// quick_sort
-int pivot_finding(int arr[], int low, int high)
+int partition(int arr[], int low, int high)
 {
-    int pivot = arr[low];
-    int i = low;
-    int j = high;
+    int PI = arr[low];
+    int left = low;
+    int right = high;
 
-    while (i < j)
+    while (left < right)
     {
-        while (arr[i] <= pivot && i <= high - 1)
-            i++;
-        while (arr[j] > pivot && j >= low + 1)
-            j--;
-
-        if (i < j)
-            swap(arr[i], arr[j]);
+        while (arr[left] <= PI && left <= high - 1)
+            left++;
+        while (arr[right] > PI && right >= low + 1)
+            right--;
+        if (left < right)
+            swap(arr[left], arr[right]);
     }
-    swap(arr[low], arr[j]);
-    return j;
+    swap(arr[low], arr[right]);
+    return right;
 }
 
 void quick_sort(int arr[], int low, int high)
 {
     if (low < high)
     {
-        int pIndex = pivot_finding(arr, low, high);
-        quick_sort(arr, low, pIndex - 1);
-        quick_sort(arr, pIndex + 1, high);
+        int pivot = partition(arr, low, high);
+        quick_sort(arr, low, pivot - 1);
+        quick_sort(arr, pivot + 1, high);
     }
 }
 
